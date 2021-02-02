@@ -1,28 +1,16 @@
 package br.com.alura
 
 fun main() {
-    val assistiramCursoAndroid: Set<String> = setOf("Alex", "Fran", "Gui", "Maria")
-    val assistiramCursoKotlin: Set<String> = setOf("Alex", "Paulo", "Maria")
-//    val assistiramAmbos: Set<String> = assistiramCursoAndroid + assistiramCursoKotlin
 
-    val assistiramAmbos = mutableSetOf<String>()
+    val pedidos = mapOf<Int, Double>(Pair(1, 20.0), Pair(2, 34.0), 3 to 50.0)
+    println(pedidos)
+    val pedido = pedidos[3]
+    pedido?.let {
+        println("Pedido $it")
+    }
 
-    assistiramAmbos.addAll(assistiramCursoAndroid)
-    assistiramAmbos.addAll(assistiramCursoKotlin)
-    assistiramAmbos.add("Ana")
-    assistiramAmbos.add("Ana")
-    println(assistiramAmbos)
-
-    println(assistiramCursoAndroid + assistiramCursoKotlin)
-    println(assistiramCursoAndroid union assistiramCursoKotlin)
-
-    println(assistiramCursoKotlin - assistiramCursoAndroid)
-    println(assistiramCursoKotlin subtract assistiramCursoAndroid)
-
-    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
-
-    val assistiramList = assistiramAmbos.toMutableList()
-    assistiramList.add("Alex")
-    println(assistiramList)
-    println(assistiramList.toSet())
+    for (pedido: Map.Entry<Int, Double> in pedidos) {
+        println("Número do pedido: ${pedido.key}")
+        println("Valor do pedido: ${pedido.value}")
+    }
 }
