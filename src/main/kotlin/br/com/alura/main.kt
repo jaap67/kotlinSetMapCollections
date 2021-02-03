@@ -50,6 +50,11 @@ fun main() {
     }
     println(agenda)
     println(agenda['A'])
+
+    val pedidosAgrupados: Grouping<Pedido, Boolean> = pedidos.groupingBy { pedido ->
+        pedido.valor > 50.0
+    }
+    println(pedidosAgrupados.eachCount())
 }
 
 data class Pedido(val numero: Int, val valor: Double)
